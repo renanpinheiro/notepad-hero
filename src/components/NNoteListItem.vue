@@ -2,7 +2,7 @@
 import { useRouter } from 'vue-router';
 
 const props = defineProps<{
-    id: number;
+    id: number|string;
     title: string;
     description: string;
 }>();
