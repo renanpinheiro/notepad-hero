@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
 import NButton from '../components/NButton.vue';
+import NWysiwyg from '../components/NWysiwyg.vue';
 
 const router = useRouter();
 
@@ -30,7 +31,7 @@ function handleBack() {
             </div>
 
             <div class="flex flex-col gap-2 bg-gray-200 rounded-md p-4">
-                <QuillEditor theme="snow" />
+                <NWysiwyg />
             </div>
         </div>
     </div>
