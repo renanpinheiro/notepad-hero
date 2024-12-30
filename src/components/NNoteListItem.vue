@@ -1,12 +1,21 @@
 <script setup lang="ts">
-defineProps<{
+import { useRouter } from 'vue-router';
+
+const props = defineProps<{
+    id: number;
     title: string;
     description: string;
 }>();
+
+const router = useRouter();
+
+function handleClick() {
+    router.push(`/note/${props.id}`);
+}
 </script>
 
 <template>
-    <div class="flex flex-col gap-2 my-3 border-b border-gray-200 rounded-md p-4 cursor-pointer hover:bg-blue-800 transition-colors">
+    <div class="flex flex-col gap-2 my-3 border-b border-gray-200 rounded-md p-4 cursor-pointer hover:bg-blue-800 transition-colors" @click="handleClick">
         <h2 class="text-base md:text-lg lg:text-xl font-bold font-better_vcr">{{ title }}</h2>
         <p class="text-xs md:text-sm lg:text-base text-gray-500 font-better_vcr">{{ description }}</p>
 

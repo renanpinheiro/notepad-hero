@@ -8,22 +8,22 @@ import NNoteListItem from './NNoteListItem.vue';
         <div class="flex flex-col gap-4 mt-2">
             <h2 class="text-lg md:text-xl lg:text-2xl font-bold font-better_vcr">30/12/2024</h2>
             <div class="flex flex-col gap-4">
-            <NNoteListItem title="Nota 1" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." />
-            <NNoteListItem title="Nota 1" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." />
-            <NNoteListItem title="Nota 1" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." />
-            <NNoteListItem title="Nota 1" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." />
-            <NNoteListItem title="Nota 1" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." />
+            <NNoteListItem id="1" title="Nota 1" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." />
+            <NNoteListItem id="2" title="Nota 1" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." />
+            <NNoteListItem id="3" title="Nota 1" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." />
+            <NNoteListItem id="4" title="Nota 1" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." />
+            <NNoteListItem id="5" title="Nota 1" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." />
             </div>
         </div>
         
         <div class="flex flex-col gap-4">
             <h2 class="text-lg md:text-xl lg:text-2xl font-bold font-better_vcr">29/12/2024</h2>
             <div class="flex flex-col gap-4">
-            <NNoteListItem title="Nota 1" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." />
-            <NNoteListItem title="Nota 1" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." />
-            <NNoteListItem title="Nota 1" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." />
-            <NNoteListItem title="Nota 1" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." />
-            <NNoteListItem title="Nota 1" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." />
+            <NNoteListItem id="6" title="Nota 1" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." />
+            <NNoteListItem id="7" title="Nota 1" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." />
+            <NNoteListItem id="8" title="Nota 1" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." />
+            <NNoteListItem id="9" title="Nota 1" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." />
+            <NNoteListItem id="10" title="Nota 1" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." />
             </div>
         </div>
     </div>
