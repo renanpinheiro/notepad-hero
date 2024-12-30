@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
+import { useUserStore } from '../stores/user';
 
 const hasScrolled = ref(false);
+const userStore = useUserStore();
 
 const handleScroll = () => {
   hasScrolled.value = window.scrollY > 0;
@@ -23,15 +25,15 @@ onUnmounted(() => {
         <div class="flex items-center gap-2 bg-[#2F3136] px-2 sm:px-4 py-1 sm:py-2 rounded-full text-sm sm:text-base">
           <img class="w-6 h-6 sm:w-8 sm:h-8" src="../assets/witch_cap.svg" alt="Coin" />
           <span class="hidden sm:inline">Lvl.</span>
-          <span>99</span>
+          <span>{{ userStore.level }}</span>
           &nbsp;
           <img class="w-6 h-6 sm:w-8 sm:h-8" src="../assets/coin_2.svg" alt="Coin" />
-          <span class="truncate max-w-[4rem] sm:max-w-none">999999</span>
+          <span class="truncate max-w-[4rem] sm:max-w-none">{{ userStore.coins }}</span>
         </div>
 
         <div class="flex items-center gap-2 bg-[#2F3136] px-4 py-2 rounded-full">
             <img width="32" height="32" src="../assets/helm.svg" alt="Note" />
-            <span>Renan L.</span>
+            <span>{{ userStore.name }}</span>
         </div>
       </section>
     </header>

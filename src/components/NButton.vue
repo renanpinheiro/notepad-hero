@@ -3,6 +3,7 @@
         label: string;
         type: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'outline';
         customClass?: string;
+        textAlign?: 'left' | 'center' | 'right';
     }
 
     const props = defineProps<NButtonProps>();
@@ -21,7 +22,12 @@
                 'bg-blue-400': props.type === 'info',
                 'bg-transparent': props.type === 'outline'
             },
-            'flex items-center gap-4 text-white px-4 py-2 rounded font-better_vcr'
+            'flex items-center gap-4 text-white px-4 py-2 rounded font-better_vcr',
+            {
+                'justify-start': props.textAlign === 'left',
+                'justify-center': props.textAlign === 'center',
+                'justify-end': props.textAlign === 'right'
+            }
         ]"
     >
     <slot name="icon"></slot>
