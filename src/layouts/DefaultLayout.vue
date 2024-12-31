@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
 import { useUserStore } from '../stores/user';
+import NSidebar from '../components/NSidebar.vue';
+import NLanguageSwitcher from '../components/NLanguageSwitcher.vue';
 
 const hasScrolled = ref(false);
 const userStore = useUserStore();
@@ -31,15 +33,19 @@ onUnmounted(() => {
           <span class="truncate max-w-[4rem] sm:max-w-none">{{ userStore.coins }}</span>
         </div>
 
-        <div class="flex items-center gap-2 bg-[#2F3136] px-4 py-2 rounded-full">
-            <img width="32" height="32" src="../assets/helm.svg" alt="Note" />
-            <span>{{ userStore.name }}</span>
-        </div>
+        <router-link to="/profile" class="flex items-center gap-2 bg-[#2F3136] px-4 py-2 rounded-full">
+          <img width="32" height="32" src="../assets/helm.svg" alt="Note" />
+          <span>{{ userStore.name }}</span>
+        </router-link>
       </section>
     </header>
 
-    <main class="container mx-auto p-4 mt-20">
-      <router-view />
+    <NSidebar />
+
+    <main class="lg:ml-64 transition-all duration-300">
+      <div class="container mx-auto p-4 mt-20">
+        <router-view />
+      </div>
     </main>
   </div>
 </template>
