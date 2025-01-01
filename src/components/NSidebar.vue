@@ -16,39 +16,34 @@ const toggleCollapse = () => {
 
 <template>
   <div>
-    <button 
+    <button
       @click="toggleSidebar"
       class="lg:hidden fixed top-24 left-4 z-50 bg-[#2F3136] p-2 rounded-full"
     >
-      <svg 
-        class="w-6 h-6 text-white"
-        fill="none" 
-        stroke="currentColor" 
-        viewBox="0 0 24 24"
-      >
-        <path 
+      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
           v-if="!isOpen"
-          stroke-linecap="round" 
-          stroke-linejoin="round" 
-          stroke-width="2" 
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
           d="M4 6h16M4 12h16M4 18h16"
         />
-        <path 
+        <path
           v-else
-          stroke-linecap="round" 
-          stroke-linejoin="round" 
-          stroke-width="2" 
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
           d="M6 18L18 6M6 6l12 12"
         />
       </svg>
     </button>
 
-    <div 
+    <div
       class="fixed top-0 left-0 h-full bg-[#2F3136] transition-all duration-300 z-40 pt-20"
       :class="[
         isOpen ? 'w-64 translate-x-0' : 'w-64 -translate-x-full',
         'lg:translate-x-0',
-        isCollapsed ? 'lg:w-20' : 'lg:w-64'
+        isCollapsed ? 'lg:w-20' : 'lg:w-64',
       ]"
     >
       <button
@@ -73,19 +68,19 @@ const toggleCollapse = () => {
 
       <div class="p-4 flex flex-col gap-4 justify-between h-full">
         <div class="flex flex-col gap-2">
-          <NButton 
-            type="secondary" 
-            :label="!isCollapsed ? $t('sidebar.home') : ''" 
+          <NButton
+            type="secondary"
+            :label="!isCollapsed ? $t('sidebar.home') : ''"
             textAlign="left"
             @click="$router.push('/')"
           >
             <template #icon>
               <img class="w-6 h-6" src="../assets/note.svg" alt="Home" />
             </template>
-          </NButton>  
-          <NButton 
-            type="secondary" 
-            :label="!isCollapsed ? $t('sidebar.profile') : ''" 
+          </NButton>
+          <NButton
+            type="secondary"
+            :label="!isCollapsed ? $t('sidebar.profile') : ''"
             textAlign="left"
             @click="$router.push('/profile')"
           >
@@ -94,9 +89,9 @@ const toggleCollapse = () => {
             </template>
           </NButton>
 
-          <NButton 
-            type="secondary" 
-            :label="!isCollapsed ? $t('sidebar.categories') : ''" 
+          <NButton
+            type="secondary"
+            :label="!isCollapsed ? $t('sidebar.categories') : ''"
             textAlign="left"
             @click="$router.push('/categories')"
           >
@@ -112,8 +107,8 @@ const toggleCollapse = () => {
       </div>
     </div>
 
-    <div 
-      v-if="isOpen" 
+    <div
+      v-if="isOpen"
       class="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden"
       @click="toggleSidebar"
     ></div>

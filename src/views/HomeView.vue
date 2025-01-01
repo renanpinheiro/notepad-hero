@@ -6,4 +6,4 @@ import NNoteList from '../components/NNoteList.vue';
   <div class="home">
     <NNoteList />
   </div>
-</template> 
+</template>

@@ -1,19 +1,19 @@
-import { useRouter } from "vue-router";
-import { useUserStore } from "../stores/user";
+import { useRouter } from 'vue-router';
+import { useUserStore } from '../stores/user';
 
 export default function useAuth() {
-    const userStore = useUserStore();
-    const router = useRouter();
-    
-    function checkAuth() {
-        if (userStore.isAuthenticated) return true;
+  const userStore = useUserStore();
+  const router = useRouter();
 
-        router.push('/login');
+  function checkAuth() {
+    if (userStore.isAuthenticated) return true;
 
-        return false;
-    }
+    router.push('/login');
 
-    return {
-        checkAuth,
-    };
+    return false;
+  }
+
+  return {
+    checkAuth,
+  };
 }

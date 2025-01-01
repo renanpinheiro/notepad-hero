@@ -1,5 +1,6 @@
-import { defineStore } from "pinia";
-import type { User } from "../types/user.types";
+import { defineStore } from 'pinia';
+import type { User } from '../types/user.types';
+import type { Level } from '../types/game.types';
 
 interface UserStore {
   user: User;
@@ -10,7 +11,7 @@ export const useUserStore = defineStore('user', {
   state: (): UserStore => ({
     user: {
       name: 'Renan L.',
-      level: 1,
+      level: {} as Level,
       coins: 0,
       notes: [],
     },
@@ -21,4 +22,4 @@ export const useUserStore = defineStore('user', {
       this.user = user;
     },
   },
-})
+});

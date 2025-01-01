@@ -1,5 +1,5 @@
 export interface Level {
-    id: number;
-    name: string;
-    exp: number;
+  id: number;
+  name: string;
+  exp: number;
 }

@@ -21,9 +21,14 @@ onUnmounted(() => {
 
 <template>
   <div class="min-h-screen w-full">
-    <header class="w-full text-white p-4 font-better_vcr fixed top-0 left-0 z-50 transition-colors" :class="{ 'bg-[#23272A]': hasScrolled }">
+    <header
+      class="w-full text-white p-4 font-better_vcr fixed top-0 left-0 z-50 transition-colors"
+      :class="{ 'bg-[#23272A]': hasScrolled }"
+    >
       <section class="flex justify-between items-center">
-        <div class="flex items-center gap-2 bg-[#2F3136] px-2 sm:px-4 py-1 sm:py-2 rounded-full text-sm sm:text-base">
+        <div
+          class="flex items-center gap-2 bg-[#2F3136] px-2 sm:px-4 py-1 sm:py-2 rounded-full text-sm sm:text-base"
+        >
           <img class="w-6 h-6 sm:w-8 sm:h-8" src="../assets/witch_cap.svg" alt="Coin" />
           <span class="hidden sm:inline">Lvl.</span>
           <span>1</span>
@@ -32,7 +37,10 @@ onUnmounted(() => {
           <span class="truncate max-w-[4rem] sm:max-w-none">{{ userStore.user.coins }}</span>
         </div>
 
-        <router-link to="/profile" class="flex items-center gap-2 bg-[#2F3136] px-4 py-2 rounded-full">
+        <router-link
+          to="/profile"
+          class="flex items-center gap-2 bg-[#2F3136] px-4 py-2 rounded-full"
+        >
           <img width="32" height="32" src="../assets/helm.svg" alt="Note" />
           <span>{{ userStore.user.name }}</span>
         </router-link>

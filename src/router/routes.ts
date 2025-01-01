@@ -1,11 +1,11 @@
-import DefaultLayout from '../layouts/DefaultLayout.vue'
-import LoginLayout from '../layouts/LoginLayout.vue'
-import HomeView from '../views/HomeView.vue'
-import AboutView from '../views/AboutView.vue'
-import LoginView from '../views/LoginView.vue'
-import NoteView from '../views/NoteView.vue'
-import ProfileView from '../views/ProfileView.vue'
-import CategoryView from '../views/CategoryView.vue'
+import DefaultLayout from '../layouts/DefaultLayout.vue';
+import LoginLayout from '../layouts/LoginLayout.vue';
+import HomeView from '../views/HomeView.vue';
+import AboutView from '../views/AboutView.vue';
+import LoginView from '../views/LoginView.vue';
+import NoteView from '../views/NoteView.vue';
+import ProfileView from '../views/ProfileView.vue';
+import CategoryView from '../views/CategoryView.vue';
 
 export const routes = [
   {
@@ -15,29 +15,29 @@ export const routes = [
       {
         path: '',
         name: 'home',
-        component: HomeView
-      },  
+        component: HomeView,
+      },
       {
         path: 'note/:id',
         name: 'note',
-        component: NoteView
+        component: NoteView,
       },
       {
         path: 'about',
         name: 'about',
-        component: AboutView
+        component: AboutView,
       },
       {
         path: 'profile',
         name: 'profile',
-        component: ProfileView
+        component: ProfileView,
       },
       {
         path: 'categories',
         name: 'categories',
-        component: CategoryView
-      }
-    ]
+        component: CategoryView,
+      },
+    ],
   },
   {
     path: '/login',
@@ -46,8 +46,8 @@ export const routes = [
       {
         path: '',
         name: 'login',
-        component: LoginView
-      }
-    ]
-  }
-] 
+        component: LoginView,
+      },
+    ],
+  },
+];

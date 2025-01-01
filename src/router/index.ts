@@ -1,22 +1,22 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import { useUserStore } from '../stores/user'
-import { routes } from './routes'
+import { createRouter, createWebHistory } from 'vue-router';
+import { useUserStore } from '../stores/user';
+import { routes } from './routes';
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
-})
+  routes,
+});
 
-router.beforeEach((to, from, next) => {
-  const userStore = useUserStore()
-  const publicPages = ['/login']
-  const authRequired = !publicPages.includes(to.path)
+router.beforeEach((to, _from, next) => {
+  const userStore = useUserStore();
+  const publicPages = ['/login'];
+  const authRequired = !publicPages.includes(to.path);
 
   if (authRequired && !userStore.isAuthenticated) {
-    next('/login')
+    next('/login');
   } else {
-    next()
+    next();
   }
-})
+});
 
-export default router
+export default router;
