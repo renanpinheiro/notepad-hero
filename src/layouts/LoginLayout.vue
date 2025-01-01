@@ -15,7 +15,7 @@ import NLanguageSwitcher from '../components/NLanguageSwitcher.vue';
     <router-view></router-view>
   </div>
   <div class="footer p-2 text-center text-xs sm:text-sm text-white bg-purple-900 backdrop-blur-sm shadow-md mx-auto mt-20 w-full">
-    <p>© 2024 Notepad Hero. Todos os direitos reservados.</p>
+    <p>© 2025 Notepad Hero. Made with 💜 by <b>Imovity</b>.</p>
   </div>
 </div>
 </template>
