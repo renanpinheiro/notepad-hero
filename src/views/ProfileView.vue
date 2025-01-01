@@ -12,11 +12,11 @@ const userStore = useUserStore();
         <div class="flex flex-col gap-4 mt-2">
             <h2 class="flex flex-row justify-between text-lg md:text-xl lg:text-2xl font-bold font-better_vcr">
                 <span class="text-gray-400">
-                    Renan Pinheiro de Azevedo Lima
+                    {{ userStore.user.name }}
                 </span>
 
                 <span class="text-gray-400">
-                    Lvl. {{ userStore.level }}
+                    Lvl. 1
                 </span>
             </h2>
         </div>

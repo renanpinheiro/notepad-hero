@@ -26,15 +26,15 @@ onUnmounted(() => {
         <div class="flex items-center gap-2 bg-[#2F3136] px-2 sm:px-4 py-1 sm:py-2 rounded-full text-sm sm:text-base">
           <img class="w-6 h-6 sm:w-8 sm:h-8" src="../assets/witch_cap.svg" alt="Coin" />
           <span class="hidden sm:inline">Lvl.</span>
-          <span>{{ userStore.level }}</span>
+          <span>1</span>
           &nbsp;
           <img class="w-6 h-6 sm:w-8 sm:h-8" src="../assets/coin_2.svg" alt="Coin" />
-          <span class="truncate max-w-[4rem] sm:max-w-none">{{ userStore.coins }}</span>
+          <span class="truncate max-w-[4rem] sm:max-w-none">{{ userStore.user.coins }}</span>
         </div>
 
         <router-link to="/profile" class="flex items-center gap-2 bg-[#2F3136] px-4 py-2 rounded-full">
           <img width="32" height="32" src="../assets/helm.svg" alt="Note" />
-          <span>{{ userStore.name }}</span>
+          <span>{{ userStore.user.name }}</span>
         </router-link>
       </section>
     </header>
