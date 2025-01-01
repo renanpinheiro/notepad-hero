@@ -2,7 +2,6 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 import { useUserStore } from '../stores/user';
 import NSidebar from '../components/NSidebar.vue';
-import NLanguageSwitcher from '../components/NLanguageSwitcher.vue';
 
 const hasScrolled = ref(false);
 const userStore = useUserStore();
