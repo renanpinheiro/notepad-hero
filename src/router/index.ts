@@ -1,59 +1,22 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import DefaultLayout from '../layouts/DefaultLayout.vue'
-import LoginLayout from '../layouts/LoginLayout.vue'
-import HomeView from '../views/HomeView.vue'
-import AboutView from '../views/AboutView.vue'
-import LoginView from '../views/LoginView.vue'
-import NoteView from '../views/NoteView.vue'
-import ProfileView from '../views/ProfileView.vue'
-import CategoryView from '../views/CategoryView.vue'
+import { useUserStore } from '../stores/user'
+import { routes } from './routes'
 
 const router = createRouter({
   history: createWebHistory(),
-  routes: [
-    {
-      path: '/',
-      component: DefaultLayout,
-      children: [
-        {
-          path: '',
-          name: 'home',
-          component: HomeView
-        },  
-        {
-          path: 'note/:id',
-          name: 'note',
-          component: NoteView
-        },
-        {
-          path: 'about',
-          name: 'about',
-          component: AboutView
-        },
-        {
-          path: 'profile',
-          name: 'profile',
-          component: ProfileView
-        },
-        {
-          path: 'categories',
-          name: 'categories',
-          component: CategoryView
-        }
-      ]
-    },
-    {
-      path: '/login',
-      component: LoginLayout,
-      children: [
-        {
-          path: '',
-          name: 'login',
-          component: LoginView
-        }
-      ]
-    }
-  ]
+  routes
 })
 
-export default router;
+router.beforeEach((to, from, next) => {
+  const userStore = useUserStore()
+  const publicPages = ['/login']
+  const authRequired = !publicPages.includes(to.path)
+
+  if (authRequired && !userStore.isAuthenticated) {
+    next('/login')
+  } else {
+    next()
+  }
+})
+
+export default router

@@ -1,4 +1,4 @@
-export interface NoteHashtag {
+export interface NoteTag {
   id: number;
   name: string;
 }
@@ -15,6 +15,6 @@ export interface Note {
   createdAt: Date;
   updatedAt: Date;
   group: NoteGroup;
-  hashtags: NoteHashtag[];
+  tags: NoteTag[];
   isFavorite: boolean;
 }

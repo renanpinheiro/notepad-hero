@@ -1,84 +1,103 @@
-<template>
-  <div>
-    <div class="text-center mb-8">
-      <h2 class="text-3xl font-bold text-gray-900">Sign in to your account</h2>
-      <p class="mt-2 text-sm text-gray-600">
-        Or
-        <a href="#" class="font-medium text-blue-600 hover:text-blue-500">
-          start your 14-day free trial
-        </a>
-      </p>
-    </div>
-
-    <form class="space-y-6" @submit.prevent="handleLogin">
-      <div>
-        <label for="email" class="block text-sm font-medium text-gray-700">
-          Email address
-        </label>
-        <input
-          id="email"
-          type="email"
-          v-model="email"
-          required
-          class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-        />
-      </div>
-
-      <div>
-        <label for="password" class="block text-sm font-medium text-gray-700">
-          Password
-        </label>
-        <input
-          id="password"
-          type="password"
-          v-model="password"
-          required
-          class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-        />
-      </div>
-
-      <div class="flex items-center justify-between">
-        <div class="flex items-center">
-          <input
-            id="remember-me"
-            type="checkbox"
-            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-          />
-          <label for="remember-me" class="ml-2 block text-sm text-gray-900">
-            Remember me
-          </label>
-        </div>
-
-        <a href="#" class="text-sm font-medium text-blue-600 hover:text-blue-500">
-          Forgot your password?
-        </a>
-      </div>
-
-      <div>
-        <button
-          type="submit"
-          class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-        >
-          Sign in
-        </button>
-      </div>
-
-      <div class="mt-6">
-        <GoogleButton class="w-full" />
-      </div>
-    </form>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { ref } from 'vue'
-import GoogleButton from '../components/GoogleButton.vue'
+import NGoogleButton from '../components/NGoogleButton.vue'
+import NDiscordButton from '../components/NDiscordButton.vue'
 
 const email = ref('')
 const password = ref('')
 
 const handleLogin = () => {
-  // Handle login logic here
   console.log('Login attempt:', { email: email.value, password: password.value })
 }
-</script> 
+</script>
+
+<template>
+<div class="min-h-screen flex">
+  <div class="hidden lg:block lg:w-1/2 relative">
+    <img src="../assets/login.gif" alt="Dark Souls Pixel Art Animation" class="w-full h-full object-cover">
+    <div class="absolute top-0 right-0 h-full w-96 bg-gradient-to-r from-transparent via-[#5865f2]/70 to-[#5865f2]"></div>
+  </div>
+
+  <div class="w-full lg:w-1/2 flex items-center justify-center p-8">
+    <div class="max-w-md w-full space-y-8">
+      <div class="text-center">
+        <h2 class="mt-6 text-3xl font-extrabold text-white font-better_vcr">
+          {{ $t('login.title') }}
+        </h2>
+        <p class="mt-2 text-sm text-gray-400">
+          {{ $t('login.subtitle') }}
+        </p>
+      </div>
+
+      <form class="mt-8 space-y-6" @submit.prevent="handleLogin">
+        <div class="rounded-md shadow-sm space-y-4">
+          <div>
+            <label for="email" class="font-better_vcr">{{ $t('login.email') }}</label>
+            <input 
+              id="email"
+              v-model="email"
+              type="email" 
+              required
+              class="appearance-none rounded-lg relative block w-full px-3 py-2 border border-gray-700 bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-purple-500 focus:border-purple-500"
+              :placeholder="$t('login.email')"
+            >
+          </div>
+          <div>
+            <label for="password" class="font-better_vcr">{{ $t('login.password') }}</label>
+            <input 
+              id="password"
+              v-model="password"
+              type="password"
+              required
+              class="appearance-none rounded-lg relative block w-full px-3 py-2 border border-gray-700 bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-purple-500 focus:border-purple-500"
+              :placeholder="$t('login.password')"
+            >
+          </div>
+        </div>
+        
+        <div class="flex justify-center">
+          <button class="font-better_vcr text-sm text-gray-400 hover:text-gray-300">
+            {{ $t('login.forgotPassword') }}
+          </button>
+        </div>
+
+        <div>
+          <button 
+            type="submit"
+            class="font-better_vcr group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
+          >
+            {{ $t('login.signIn') }}
+          </button>
+        </div>
+
+        <div class="flex flex-col gap-2 justify-center">
+          <NGoogleButton />
+          <NDiscordButton />
+        </div>
+
+
+        <div class="relative">
+          <div class="absolute inset-0 flex items-center">
+            <div class="w-full border-t border-gray-700"></div>
+          </div>
+          <div class="relative flex justify-center text-sm">
+            <span class="font-better_vcr px-2 bg-gray-900 text-gray-400">{{ $t('login.notRegistered') }}</span>
+          </div>
+        </div>
+
+        <div>
+          <button 
+            type="submit"
+            class="font-better_vcr group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
+          >
+            {{ $t('login.signUp') }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</template>
+
+<style scoped>
+</style>
