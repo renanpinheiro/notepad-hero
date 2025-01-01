@@ -6,7 +6,7 @@ import NButton from './NButton.vue';
   <NButton
     :label="$t('login.sign_in_with_google')"
     type="info"
-    customClass="bg-white text-black"
+    customClass="bg-white text-gray-800"
     textAlign="center"
   >
     <template #icon>
