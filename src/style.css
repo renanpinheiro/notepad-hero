@@ -19,6 +19,8 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background: linear-gradient(to bottom, #23272a, #5865f2);
+  /* background: linear-gradient(to bottom, #23272a, #5865f2), url('./assets/backgrounds/gradient_3.jpg') center/cover repeat; */
+  /* background-blend-mode: hue; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

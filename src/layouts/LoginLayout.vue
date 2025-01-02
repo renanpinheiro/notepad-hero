@@ -11,7 +11,7 @@ import NLanguageSwitcher from '../components/NLanguageSwitcher.vue';
       </div>
       <NLanguageSwitcher />
     </div>
-    <div class="flex-grow overflow-hidden">
+    <div class="flex-grow">
       <router-view></router-view>
     </div>
     <div

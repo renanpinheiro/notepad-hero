@@ -6,6 +6,8 @@ import LoginView from '../views/LoginView.vue';
 import NoteView from '../views/NoteView.vue';
 import ProfileView from '../views/ProfileView.vue';
 import CategoryView from '../views/CategoryView.vue';
+import RegisterView from '../views/RegisterView.vue';
+import DebugView from '../views/DebugView.vue';
 
 export const routes = [
   {
@@ -48,6 +50,16 @@ export const routes = [
         name: 'login',
         component: LoginView,
       },
+      {
+        path: '/register',
+        name: 'register',
+        component: RegisterView,
+      },
     ],
+  },
+  {
+    path: '/debug',
+    name: 'debug',
+    component: DebugView,
   },
 ];

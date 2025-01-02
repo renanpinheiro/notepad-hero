@@ -4,7 +4,7 @@ import NButton from './NButton.vue';
 
 <template>
   <NButton
-    :label="$t('login.sign_in_with_discord')"
+    :label="$t('login.signInWithDiscord')"
     type="info"
     customClass="bg-[#5663F7] text-gray-100"
     textAlign="center"

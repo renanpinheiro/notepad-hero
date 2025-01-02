@@ -8,6 +8,8 @@ export default {
     home: 'Início',
     profile: 'Perfil',
     about: 'Sobre',
+    categories: 'Categorias',
+    logout: 'Sair',
   },
   notes: {
     createNew: 'Criar Nova Nota',
@@ -24,13 +26,17 @@ export default {
     group: 'Grupo',
     note: 'Nota',
   },
-  auth: {
-    signIn: 'Entre na sua conta',
+  login: {
+    title: 'Bem vindo de volta, viajante!',
+    subtitle: 'Entre para continuar',
     email: 'Endereço de email',
     password: 'Senha',
     rememberMe: 'Lembrar-me',
     forgotPassword: 'Esqueceu sua senha?',
-    signInButton: 'Entrar',
+    signIn: 'Entrar',
     signInWithGoogle: 'Entrar com Google',
+    signInWithDiscord: 'Entrar com Discord',
+    notRegistered: 'Não tem uma conta? Cadastre-se:',
+    signUp: 'Cadastre-se',
   },
 };

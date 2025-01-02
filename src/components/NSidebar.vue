@@ -2,8 +2,13 @@
 import { ref } from 'vue';
 import NButton from './NButton.vue';
 import NLanguageSwitcher from './NLanguageSwitcher.vue';
+import { useRouter } from 'vue-router';
+import useAuth from '../composables/auth';
+
 const isOpen = ref(false);
 const isCollapsed = ref(false);
+const router = useRouter();
+const { signOut } = useAuth();
 
 const toggleSidebar = () => {
   isOpen.value = !isOpen.value;
@@ -11,6 +16,12 @@ const toggleSidebar = () => {
 
 const toggleCollapse = () => {
   isCollapsed.value = !isCollapsed.value;
+};
+
+const handleLogout = async () => {
+  await signOut();
+
+  router.push('/login');
 };
 </script>
 
@@ -70,7 +81,7 @@ const toggleCollapse = () => {
         <div class="flex flex-col gap-2">
           <NButton
             type="secondary"
-            :label="!isCollapsed ? $t('sidebar.home') : ''"
+            :label="!isCollapsed ? $t('sidebar.notes') : ''"
             textAlign="left"
             @click="$router.push('/')"
           >
@@ -80,9 +91,9 @@ const toggleCollapse = () => {
           </NButton>
           <NButton
             type="secondary"
-            :label="!isCollapsed ? $t('sidebar.profile') : ''"
+            :label="!isCollapsed ? $t('sidebar.habits') : ''"
             textAlign="left"
-            @click="$router.push('/profile')"
+            @click="$router.push('/habits')"
           >
             <template #icon>
               <img class="w-6 h-6" src="../assets/helm.svg" alt="Profile" />
@@ -91,18 +102,40 @@ const toggleCollapse = () => {
 
           <NButton
             type="secondary"
-            :label="!isCollapsed ? $t('sidebar.categories') : ''"
+            :label="!isCollapsed ? $t('sidebar.flashcards') : ''"
             textAlign="left"
-            @click="$router.push('/categories')"
+            @click="$router.push('/flashcards')"
           >
             <template #icon>
               <img class="w-6 h-6" src="../assets/blue_scroll.svg" alt="About" />
             </template>
           </NButton>
+
+          <NButton
+            type="secondary"
+            :label="!isCollapsed ? $t('sidebar.calendar') : ''"
+            textAlign="left"
+            @click="$router.push('/calendar')"
+          >
+            <template #icon>
+              <img class="w-6 h-6" src="../assets/settings.svg" alt="Settings" />
+            </template>
+          </NButton>
         </div>
 
-        <div class="mt-auto mb-4 flex justify-center">
+        <div class="mt-auto mb-4 flex flex-col gap-2 justify-center items-center">
           <NLanguageSwitcher :isCollapsed="isCollapsed" />
+
+          <NButton
+            type="secondary"
+            :label="!isCollapsed ? $t('sidebar.logout') : ''"
+            textAlign="left"
+            @click="handleLogout"
+          >
+            <template #icon>
+              <img class="w-6 h-6" src="../assets/silver_key.svg" alt="Logout" />
+            </template>
+          </NButton>
         </div>
       </div>
     </div>
