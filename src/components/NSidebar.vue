@@ -118,7 +118,7 @@ const handleLogout = async () => {
             @click="$router.push('/calendar')"
           >
             <template #icon>
-              <img class="w-6 h-6" src="../assets/settings.svg" alt="Settings" />
+              <img class="w-6 h-6" src="../assets/note.svg" alt="Settings" />
             </template>
           </NButton>
         </div>
