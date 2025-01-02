@@ -1,4 +1,3 @@
-import { useRouter } from 'vue-router';
 import { useUserStore } from '../stores/user';
 import useSupabase from './supabase';
 import type { LoginPayload } from '../types/login.types';
